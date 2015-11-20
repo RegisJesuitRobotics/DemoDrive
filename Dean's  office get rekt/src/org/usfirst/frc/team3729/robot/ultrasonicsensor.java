@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.Ultrasonic.Unit;
 public class ultrasonicsensor {
 	Ultrasonic sonicfront;
 	double range;
+	int z;
 	robotDrive Drive;
 	public ultrasonicsensor()
 	{
@@ -13,17 +14,18 @@ public class ultrasonicsensor {
 		sonicfront = new Ultrasonic(9,8,Unit.kMillimeter);
 		sonicfront.setEnabled(true);
 	}
-	public void wallHacks()
+	public int wallHacks()
 	{
-		range = sonicfront.getRangeMM();
+		z = 0;
+		
 		if (sonicfront.isRangeValid()==true)
 		{
-			if (range<1000)
+			range = sonicfront.getRangeMM();
+			if (range<500)
 			{
-				Drive.mcLeft.set(0);
-				Drive.mcRight.set(0);
-				
+				z=1;
 			}
 		}
+		return z;
 	}
 }

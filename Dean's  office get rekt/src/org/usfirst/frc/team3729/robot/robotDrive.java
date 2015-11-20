@@ -10,14 +10,16 @@ public class robotDrive {
 	Talon mcRight;
 	Input input;
 	Encode encode;
+	ultrasonicsensor ultrasound;
 	 double  encodeL;
 	 double  encodeR;
 	 double distanceL;
 	 double distanceR;
+	 int sonic;
 	
 	public robotDrive()
 	{
-		
+		ultrasound = new ultrasonicsensor();
 		mcLeft= new Talon(0);
 		mcRight= new Talon(1);
 		input = new Input();
@@ -30,6 +32,7 @@ public class robotDrive {
 	}
 	public void tankDrive() 
 	{
+		sonic = ultrasound.wallHacks();
 		boolean z1 = input.left.getRawButton(3);
 		boolean z2 = input.right.getRawButton(3);
 		while ((z1==true)||(z2==true))
@@ -38,6 +41,11 @@ public class robotDrive {
 			z2 = input.right.getRawButton(3);
 			mcLeft.set(.46*input.left.getRawAxis(1));
 			mcRight.set(.5*-input.right.getRawAxis(1));
+		}
+		if (sonic==1)
+		{
+			mcLeft.set(0);
+			mcRight.set(0);
 		}
 		mcLeft.set(.92*input.left.getRawAxis(1));
 		mcRight.set(-input.right.getRawAxis(1));
@@ -66,6 +74,7 @@ public void tankDrive(double distance,  double speed)
 	{
 		mcLeft.set(-.92*speed);
 		mcRight.set(speed);
+		
 		Timer.delay(.667*distance/speed);
 	/*	encode.leftENC.reset();
 		encode.rightENC.reset();

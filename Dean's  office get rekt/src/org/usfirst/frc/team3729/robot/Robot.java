@@ -17,17 +17,15 @@ public class Robot extends SampleRobot {
         camera = new servoControl();
         //drive.setExpiration(0.1);
         input = new Input();
-        ultrasound = new ultrasonicsensor();
-        //parameters: (ports)a channel, b channel, reverse direction, encoding type
+        
+        
     }
 
   
     //@SuppressWarnings("deprecation")
 	public void autonomous()   
-    {
-		
-			ultrasound.wallHacks();
-	        drive.tankDrive(.1,.5);
+	{
+	        drive.tankDrive(10,.5);
 	
     	
         
@@ -38,6 +36,7 @@ public class Robot extends SampleRobot {
         {
         	drive.tankDrive();
         	camera.camTurn();
+        	//ultrasound.wallHacks();
         	Timer.delay(0.005);// wait for a motor update time
         	
         }
