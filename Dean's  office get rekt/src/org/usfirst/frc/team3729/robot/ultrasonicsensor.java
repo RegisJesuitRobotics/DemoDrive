@@ -12,12 +12,11 @@ public class ultrasonicsensor {
 	{
 		
 		sonicfront = new Ultrasonic(9,8,Unit.kMillimeter);
-		sonicfront.setEnabled(true);
+		sonicfront.setEnabled(true);//turn on sonic
 	}
 	public int wallHacks()
 	{
 		z = 0;
-		
 		if (sonicfront.isRangeValid()==true)
 		{
 			range = sonicfront.getRangeMM();
