@@ -5,10 +5,7 @@ import edu.wpi.first.wpilibj.Encoder;
 public class Encode {
 	 Encoder leftENC;
 	 Encoder rightENC;
-	 double  encodeL;
-	 double  encodeR;
-	 double distanceL;
-	 double distanceR;
+	
 public Encode()
 {
 	leftENC = new Encoder(0,1,false,Encoder.EncodingType.k2X);

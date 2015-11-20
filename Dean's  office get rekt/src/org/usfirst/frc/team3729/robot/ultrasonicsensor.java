@@ -6,10 +6,10 @@ import edu.wpi.first.wpilibj.Ultrasonic.Unit;
 public class ultrasonicsensor {
 	Ultrasonic sonicfront;
 	double range;
-	robotDrive drive;
+	robotDrive Drive;
 	public ultrasonicsensor()
 	{
-		drive = new robotDrive();
+		
 		sonicfront = new Ultrasonic(9,8,Unit.kMillimeter);
 		sonicfront.setEnabled(true);
 	}
@@ -20,8 +20,8 @@ public class ultrasonicsensor {
 		{
 			if (range<1000)
 			{
-				drive.mcLeft.set(0);
-				drive.mcRight.set(0);
+				Drive.mcLeft.set(0);
+				Drive.mcRight.set(0);
 				
 			}
 		}

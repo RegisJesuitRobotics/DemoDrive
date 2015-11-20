@@ -1,6 +1,4 @@
 package org.usfirst.frc.team3729.robot;
-import java.lang.*;
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Timer;
 
@@ -8,9 +6,14 @@ import edu.wpi.first.wpilibj.Timer;
 
 public class robotDrive {
 
-	Talon mcLeft, mcRight;
+	Talon mcLeft;
+	Talon mcRight;
 	Input input;
 	Encode encode;
+	 double  encodeL;
+	 double  encodeR;
+	 double distanceL;
+	 double distanceR;
 	
 	public robotDrive()
 	{
@@ -66,12 +69,12 @@ public void tankDrive(double distance,  double speed)
 		Timer.delay(.667*distance/speed);
 	/*	encode.leftENC.reset();
 		encode.rightENC.reset();
-		while (encode.distanceL<=distance)
+		while (distanceL<=distance)
 		{
-		encode.encodeL = encode.leftENC.get();
-		encode.encodeR = encode.rightENC.get();
-		encode.distanceL=encode.leftENC.getDistance();
-		encode.distanceR=encode.rightENC.getDistance();
+		encodeL = encode.leftENC.get();
+		encodeR = encode.rightENC.get();
+		distanceL=encode.leftENC.getDistance();
+		distanceR=encode.rightENC.getDistance();
 		
 		}*/
 		mcLeft.set(0);

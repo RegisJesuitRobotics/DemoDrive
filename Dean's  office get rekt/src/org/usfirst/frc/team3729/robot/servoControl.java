@@ -13,12 +13,9 @@ public class servoControl {
 	{
 		 input = new Input();
 		camServo = new Servo(2);
-		
-		
 	}
 	public void camTurn(double x)
 	{
-		
 		/*if (x==315)
 		{
 			camServo.setAngle(45);
@@ -32,8 +29,6 @@ public class servoControl {
 			camServo.setAngle(90);
 		}*/
 		camServo.setAngle(x);
-		 
-		
 	}
 	public void camTurn()
 	{
@@ -69,16 +64,7 @@ public class servoControl {
 						Timer.delay(.15);
 					}
 			}
-		
-				
-			
-			
-			
-		
-		
-		
-			
-		
+
 	}
 }
 
