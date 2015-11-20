@@ -25,12 +25,16 @@ public class Robot extends SampleRobot {
     //@SuppressWarnings("deprecation")
 	public void autonomous()   
     {
-		
-			ultrasound.wallHacks();
-	        drive.tankDrive(.1,.5);
-	
-    	
-        
+			//ultrasound.wallHacks();
+	        drive.tankDrive(30,1);
+	        drive.turn(90);
+	        drive.tankDrive(32,1);
+	        drive.turn(-90);
+	        drive.tankDrive(54,1);
+	        drive.turn(90);
+	        drive.tankDrive(30,1);
+	        drive.turn(-90);
+	        drive.tankDrive(16,1);
     }
     public void operatorControl() {
        drive.setSafetyEnabled(true);
