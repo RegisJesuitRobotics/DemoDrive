@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 public class pneumaticGripper {
 	
 	DoubleSolenoid exampleDouble;
-	
+	Input input;
 	public pneumaticGripper(){
 
 	exampleDouble = new DoubleSolenoid(1, 2);
@@ -13,7 +13,7 @@ public class pneumaticGripper {
 	}
 	
 	//exampleDouble.set(DoubleSolenoid.Value.kOff);
-	public void closeArams(){	
+	public void closeArms(){	
 		exampleDouble.set(DoubleSolenoid.Value.kForward);
 	}
 	

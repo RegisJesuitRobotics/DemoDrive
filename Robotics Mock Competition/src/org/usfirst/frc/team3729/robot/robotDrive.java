@@ -19,7 +19,7 @@ public class robotDrive {
 	 double distanceR;*/
 	 int sonic; 
 	 double acceleration;
-	 boolean state = false;
+	 boolean state = true;
 	 double circumference=.667*3.14159;//feet
 	 double motorspeed=.9;//revolutions/second
 	

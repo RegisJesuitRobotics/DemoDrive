@@ -15,7 +15,7 @@ public class armRaise {
 	public void lift()
 	{
 		boolean up=input.left.getRawButton(4);
-		boolean down=input.left.getRawButton(4);
+		boolean down=input.left.getRawButton(3);
 		if (up==true)
 		{
 			mcRaise.set(.5);

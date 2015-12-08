@@ -9,7 +9,8 @@ public class Robot extends SampleRobot {
 	
 	Input input;
     robotDrive drive;
-    //servoControl camera;
+    armRaise raise;
+    pneumaticGripper grabber;   //servoControl camera;
     //ultrasonicsensor ultrasound;
    
     public Robot() 
@@ -18,6 +19,9 @@ public class Robot extends SampleRobot {
         //camera = new servoControl();
         //drive.setExpiration(0.1);
         input = new Input();
+        raise=new armRaise();
+        grabber = new pneumaticGripper();
+        
         
         
     }
@@ -37,10 +41,20 @@ public class Robot extends SampleRobot {
         	if (drive.change(9, 10)==true)
         	{
         	drive.tankDrive();
+        	raise.lift();
         	}
         	else 
         	{
         		drive.arcadeDrive();
+        		raise.lift();
+        	}
+        	if (input.left.getRawButton(5)==true)
+        	{
+        		grabber.closeArms();
+        	}
+        	if (input.left.getRawButton(6)==true)
+        	{
+        		grabber.openArms();
         	}
         	
         	//camera.camTurn();
